@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Girls Safety</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="alert.css" />
+    <link rel="stylesheet" href="camera.css" />
+  </head>
+
+  <body>
+    <div class="map-container">
+      <div id="sirenLight" class="blinking-lights hidden"></div>
+
+      <div class="scrollable-image">
+        <div class="sosButton" id="sosButton">SOS</div>
+        <div class="circle" style="top: 28vh; left: 35vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 48vh; left: 35vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 28vh; left: 56vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 52vh; left: 56vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 28vh; left: 105vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 44vh; left: 105vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 44vh; left: 77vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+        <div class="circle" style="top: 28vh; left: 77vh">
+          <div class="arrow">→</div>
+          <div class="range"></div>
+        </div>
+      </div>
+
+      <video id="cameraStream" width="640" height="480" autoplay></video>
+    </div>
+    <script src="js/sos.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/camControl.js"></script>
+  </body>
+</html>

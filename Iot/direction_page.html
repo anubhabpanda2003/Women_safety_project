@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sosButton {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .sosButton.active {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sosButton" id="sosButton">SOS</div>
+
+    <script>
+        const sosButton = document.getElementById('sosButton');
+
+        sosButton.addEventListener('click', () => {
+            sosButton.classList.toggle('active');
+
+            // Send request to ESP8266 to trigger LEDs
+            fetch('http://192.168.190.160/trigger', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ command: 'sos_trigger' })
+            })
+                .then(response => response.json())
+                .then(data => console.log('Success:', data))
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>
